@@ -42,29 +42,34 @@ generatePassword = function() {
   // return passwordLength
 
 
-// character choices
+var charTypes = function() {
   var charChoice = ""
-console.log(charChoice)
-  var charInput = window.confirm("Would you like to use uppercase characters?")
+  var charInput = window.confirm("Would you like to use uppercase characters?");
   if (charInput) {
     charChoice = charChoice + characters.upperCase;
     // console.log(charChoice);
   }
-  var charInput = window.confirm("Would you like to use lowercase characters?")
+  var charInput = window.confirm("Would you like to use lowercase characters?");
   if (charInput) {
-    charChoice = charChoice + characters.lowerCase
+    charChoice = charChoice + characters.lowerCase;
   }
-  var charInput = window.confirm("Would you like to use numbers?")
+  var charInput = window.confirm("Would you like to use numbers?");
   if (charInput) {
-    charChoice = charChoice + characters.numeric
+    charChoice = charChoice + characters.numeric;
   }
   // var charInput = window.confirm("Would you like to use special characters?")
   // if (charInput) {
   //   charChoice = charChoice + characters.specialChar
 
   // }
+  if (charChoice === "" || charChoice === null ) {
+    window.alert("You must choose at least one character type.");
+    charTypes();
+  };
 
-  console.log(charChoice);
+
+    console.log(charChoice);
+  
 };
 
 var characters = {
@@ -74,4 +79,4 @@ var characters = {
   // special: "!"\"#$%&'()*+,-./:;<=>?@[]^_`{|}~"
 };
 
-console.log(characters.special)
+// console.log(characters.special)
