@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 // var lowerCase = "abcdefghijklmnopqrstuvwxyz"
 // var numeric = "012345678"
 // var specialChar = "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
-
+var charChoice = ""
 
 // Write password to the #password input
 function writePassword() {
@@ -40,10 +40,18 @@ generatePassword = function() {
   // passwordLength = passwordLength.join('');
 
   // return passwordLength
+  charTypes();
+  console.log(charChoice);
 
+  charChoice = Math.floor(Math.random );
+
+  return charChoice
+
+
+}
 
 var charTypes = function() {
-  var charChoice = ""
+  // var charChoice = ""
   var charInput = window.confirm("Would you like to use uppercase characters?");
   if (charInput) {
     charChoice = charChoice + characters.upperCase;
@@ -60,23 +68,16 @@ var charTypes = function() {
   // var charInput = window.confirm("Would you like to use special characters?")
   // if (charInput) {
   //   charChoice = charChoice + characters.specialChar
-
-  // }
+  
   if (charChoice === "" || charChoice === null ) {
     window.alert("You must choose at least one character type.");
     charTypes();
-  };
-
-
-    console.log(charChoice);
-  
+  }
 };
+
 
 var characters = {
   upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   lowerCase: "abcdefghijklmnopqrstuvwxyz",
-  numeric: "0123456789",
-  // special: "!"\"#$%&'()*+,-./:;<=>?@[]^_`{|}~"
+  numeric: "0123456789"
 };
-
-// console.log(characters.special)
