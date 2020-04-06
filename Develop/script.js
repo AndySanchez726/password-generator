@@ -5,6 +5,7 @@ var generateBtn = document.querySelector("#generate");
 // var numeric = "012345678"
 // var specialChar = "!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 var charChoice = ""
+var lengthInput = ""
 
 // Write password to the #password input
 function writePassword() {
@@ -28,24 +29,17 @@ generatePassword = function() {
         window.alert("Please select a number between 8 and 128.");
         generatePassword()
     };
-    // lengthInput = characters.numeric
-    // console.log(lengthInput);
 
-  // //Turning lengthInput into number of characters
-  // var passwordLength = [];
-  // for(var i = 0; i < lengthInput; i++){    
-  //   passwordLength.push(i);
-  // };
-  // console.log(passwordLength)
-  // passwordLength = passwordLength.join('');
-
-  // return passwordLength
   charTypes();
-  console.log(charChoice);
 
-  charChoice = Math.floor(Math.random );
+  console.log(charChoice.length);
 
-  return charChoice
+  var createdPassword = [];
+  for(var i = 0; i < lengthInput; i++) {
+    createdPassword[i] = charChoice[Math.floor(Math.random() * charChoice.length)];
+    
+  }
+  return createdPassword.join('')
 
 
 }
@@ -67,17 +61,29 @@ var charTypes = function() {
   }
   // var charInput = window.confirm("Would you like to use special characters?")
   // if (charInput) {
-  //   charChoice = charChoice + characters.specialChar
-  
+  //   charChoice = charChoice + characters.special;
+  // }
   if (charChoice === "" || charChoice === null ) {
     window.alert("You must choose at least one character type.");
     charTypes();
   }
 };
 
+// var createPassword = function() {
+  
+
+
+
+// var characters = {
+//   upperCase: ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"],
+//   lowerCase: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
+//   numeric: ["1","2","3","4","5","6","7","8","9","0"],
+//   special: ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]
+// };
 
 var characters = {
   upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
   lowerCase: "abcdefghijklmnopqrstuvwxyz",
-  numeric: "0123456789"
+  numeric: "1234567890"
+  // special: ["!","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","`","{","|","}","~"]
 };
